@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Login
-        uses: docker://pulumi/actions:v1.0.0
-        with:
-            args: login gs://xxx
-        env:
-            PULUMI_CREDENTIALS_PATH: /github/home/.pulumi
+    #   - name: Login
+    #     uses: docker://pulumi/actions:v1.0.0
+    #     with:
+    #         args: login gs://xxx
+    #     env:
+    #         PULUMI_CREDENTIALS_PATH: /github/home/.pulumi
       - uses: pulumi/actions@v4
         with:
           command: preview
