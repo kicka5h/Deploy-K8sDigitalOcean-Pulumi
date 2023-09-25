@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@pulumi/digitalocean": "^4.22.0"
+  }
+}
