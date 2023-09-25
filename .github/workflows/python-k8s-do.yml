@@ -24,5 +24,6 @@ jobs:
         with:
           command: preview
           stack-name: kicka5h/sprinkle-pages/lab
+          work-dir: ./python
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_PAT }}
