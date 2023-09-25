@@ -1,0 +1,4 @@
+config:
+  sprinkle-pages:digitalocean.provider.access-token:
+    secure: AAABAKeiauv7Q729rzq4/hCIgndhJ3Pfi/sgxdL9GW4pkcAfyIL8hRA3UcujzWhgewfFUquutVsflh3HjlunYb6O0keyPTF3d6Y/HebKUmR6SgbXYkAmqNrfcy0WvZTemmivReR4wA==
+  sprinkle-pages:digitalocean.region: sfo2
