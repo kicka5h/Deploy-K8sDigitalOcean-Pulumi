@@ -25,9 +25,12 @@ jobs:
             cache-dependency-path: '**/python/package-lock.json'
       - run: npm install
         working-directory: ./python
-      - name: install digital ocean 
-        id: install_do
+      - name: python install digital ocean 
+        id: py_install_do
         run: pip3 install pulumi pulumi_digitalocean
+      - name: npm install digital ocean
+        id: npm_install_do
+        run: npm install @pulumi/digitalocean
       - uses: pulumi/actions@v4
         with:
           command: preview
