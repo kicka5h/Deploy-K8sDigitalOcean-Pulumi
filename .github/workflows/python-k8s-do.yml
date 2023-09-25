@@ -18,6 +18,6 @@ jobs:
       - uses: pulumi/actions@v4
         with:
           command: preview
-          stack-name: kicka5h/sprinkle-pages
+          stack-name: kicka5h/sprinkle-pages/lab
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_PAT }}
