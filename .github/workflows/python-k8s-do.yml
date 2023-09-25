@@ -21,7 +21,7 @@ jobs:
     #         PULUMI_CREDENTIALS_PATH: /github/home/.pulumi
       - uses: actions/setup-node@v3.5.0
         with:
-            node-version-file: package.json
+            # node-version-file: package-lock.json
             cache-dependency-path: '**/python/package-lock.json'
       - run: npm install
         working-directory: ./python
