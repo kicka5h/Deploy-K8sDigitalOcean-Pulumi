@@ -20,6 +20,11 @@ jobs:
     #         args: login gs://xxx
     #     env:
     #         PULUMI_CREDENTIALS_PATH: /github/home/.pulumi
+      - uses: actions/setup-node@v3.5.0
+        with:
+            node-version-file: package.json
+      - run: npm install
+        working-directory: ./python
       - name: install digital ocean 
         id: install_do
         run: venv/bin/pip3 install pulumi pulumi_digitalocean
