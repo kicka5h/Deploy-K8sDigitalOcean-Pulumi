@@ -27,7 +27,7 @@ jobs:
         working-directory: ./python
       - name: install digital ocean 
         id: install_do
-        run: venv/bin/pip3 install pulumi pulumi_digitalocean
+        run: pip3 install pulumi pulumi_digitalocean
       - uses: pulumi/actions@v4
         with:
           command: preview
