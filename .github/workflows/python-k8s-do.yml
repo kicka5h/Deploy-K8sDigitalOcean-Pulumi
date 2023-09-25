@@ -22,7 +22,7 @@ jobs:
     #         PULUMI_CREDENTIALS_PATH: /github/home/.pulumi
       - name: install digital ocean 
         id: install_do
-        run: pip install pulumi_digitalocean
+        run: venv/bin/pip3 install pulumi pulumi_digitalocean
       - uses: pulumi/actions@v4
         with:
           command: preview
