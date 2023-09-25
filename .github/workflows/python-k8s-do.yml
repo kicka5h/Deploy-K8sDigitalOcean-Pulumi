@@ -22,6 +22,7 @@ jobs:
       - uses: actions/setup-node@v3.5.0
         with:
             node-version-file: package.json
+            cache-dependency-path: ./python
       - run: npm install
         working-directory: ./python
       - name: install digital ocean 
