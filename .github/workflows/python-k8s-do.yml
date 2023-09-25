@@ -27,7 +27,7 @@ jobs:
         working-directory: ./python
       - name: python install digital ocean 
         id: py_install_do
-        run: pip3 install pulumi pulumi_digitalocean
+        run: ./venv/bin/pip3 install pulumi pulumi_digitalocean
       - name: npm install digital ocean
         id: npm_install_do
         run: npm install @pulumi/digitalocean
