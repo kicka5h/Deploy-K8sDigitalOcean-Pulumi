@@ -4,14 +4,13 @@ on:
     branches:
       - main
 
-defaults:
-    run:
-        working-directory: ./python
-
 jobs:
   up:
     name: Preview
     runs-on: ubuntu-latest
+    defaults:
+        run:
+            working-directory: ./python
     steps:
       - uses: actions/checkout@v3
     #   - name: Login
