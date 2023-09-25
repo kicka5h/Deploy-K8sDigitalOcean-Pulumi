@@ -20,6 +20,9 @@ jobs:
     #         args: login gs://xxx
     #     env:
     #         PULUMI_CREDENTIALS_PATH: /github/home/.pulumi
+      - name: install digital ocean 
+        id: install_do
+        run: pip install pulumi_digitalocean
       - uses: pulumi/actions@v4
         with:
           command: preview
