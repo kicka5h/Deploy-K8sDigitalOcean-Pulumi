@@ -6,7 +6,7 @@ from pulumi_digitalocean import Provider
 
 # Create a new Digital Ocean Kubernetes cluster in the sfo2 region.
 do_cluster = kubernetes_cluster.KubernetesCluster("doCluster",
-    name="galaxy-cluster"                                              
+    name="galaxy-cluster",                                              
     region="sfo2",
     version="latest",
     node_pool={
