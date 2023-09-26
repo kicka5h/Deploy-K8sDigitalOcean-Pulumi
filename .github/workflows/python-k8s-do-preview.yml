@@ -1,0 +1,29 @@
+name: Pulumi
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  up:
+    name: Preview
+    runs-on: ubuntu-latest
+    defaults:
+        run:
+            working-directory: ./python
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.5.0
+        with:
+            # node-version-file: package-lock.json
+            cache-dependency-path: '**/python/package-lock.json'
+      - run: npm install
+        working-directory: ./python
+      - run: export DIGITALOCEAN_TOKEN=${{ secrets.do_token }}
+      - uses: pulumi/actions@v4
+        with:
+          command: preview
+          stack-name: kicka5h/sprinkle-pages/lab
+          work-dir: 'python'
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_PAT }}
