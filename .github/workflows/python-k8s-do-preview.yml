@@ -13,24 +13,13 @@ jobs:
             working-directory: ./python
     steps:
       - uses: actions/checkout@v3
-    #   - name: Login
-    #     uses: docker://pulumi/actions:v1.0.0
-    #     with:
-    #         args: login gs://xxx
-    #     env:
-    #         PULUMI_CREDENTIALS_PATH: /github/home/.pulumi
       - uses: actions/setup-node@v3.5.0
         with:
             # node-version-file: package-lock.json
             cache-dependency-path: '**/python/package-lock.json'
       - run: npm install
         working-directory: ./python
-    #   - name: python install digital ocean 
-    #     id: py_install_do
-    #     run: ./venv/bin/pip3 install pulumi pulumi_digitalocean
-    #   - name: npm install digital ocean
-    #     id: npm_install_do
-    #     run: npm install @pulumi/digitalocean
+      - run: export DIGITALOCEAN_TOKEN=${{ secrets.do_token }}
       - uses: pulumi/actions@v4
         with:
           command: preview
